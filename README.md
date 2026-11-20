@@ -25,6 +25,15 @@ The Home theme comes in two sizes; install one (the Switch keeps a single Home t
 Build the handheld one with `TAHOE_DOCK=handheld` for `gen_bg.py` and `make_layouts.py`, and
 `TAHOE_VARIANT=Handheld` for `build_mytheme.py` (sources in `layouts_handheld/`, `backgrounds_handheld/`).
 
+## Adjusting the dock gap yourself
+    python3 -m pip install numpy scipy pillow       # once
+    python3 tools/tune_dock.py 12                   # TV dock, 12 px between icons (current: 14.4)
+    python3 tools/tune_dock.py 10 --handheld        # handheld dock (current: 12.4)
+    python3 tools/tune_dock.py 12 --ends 24         # also change the padding at both ends (current 20 / 18)
+
+It moves the dock buttons, redraws the glass plate to the new length and rebuilds
+`MacOS_Tahoe_home.nxtheme` (or `_handheld`). Install the rebuilt Home theme to see it.
+
 ## Known limits (firmware 23.5.0)
 - Elements without user data can't get rounded corners (the installer can edit user data but
   not create it): player avatars, group thumbnails, lock-screen news images stay square.
@@ -71,6 +80,15 @@ The Home theme comes in two sizes; install one (the Switch keeps a single Home t
 
 Build the handheld one with `TAHOE_DOCK=handheld` for `gen_bg.py` and `make_layouts.py`, and
 `TAHOE_VARIANT=Handheld` for `build_mytheme.py` (sources in `layouts_handheld/`, `backgrounds_handheld/`).
+
+## Adjusting the dock gap yourself
+    python3 -m pip install numpy scipy pillow       # once
+    python3 tools/tune_dock.py 12                   # TV dock, 12 px between icons (current: 14.4)
+    python3 tools/tune_dock.py 10 --handheld        # handheld dock (current: 12.4)
+    python3 tools/tune_dock.py 12 --ends 24         # also change the padding at both ends (current 20 / 18)
+
+It moves the dock buttons, redraws the glass plate to the new length and rebuilds
+`MacOS_Tahoe_home.nxtheme` (or `_handheld`). Install the rebuilt Home theme to see it.
 
 ## Known limits (firmware 23.5.0)
 - Elements without user data can't get rounded corners (the installer can edit user data but
