@@ -2,7 +2,7 @@
   "PatchName": "MacOS Tahoe Home",
   "AuthorName": "MyTheme",
   "TargetName": "ResidentMenu.szs",
-  "ID": "MacOSTahoe:home:4",
+  "ID": "MacOSTahoe:home:5",
   "HideOnlineBtn": true,
   "Files": [
     {
@@ -295,6 +295,26 @@
       ]
     },
     {
+      "FileName": "blyt/RdtBalloonSystemApplet.bflyt",
+      "Patches": [
+        {
+          "PaneName": "T_Main",
+          "UsdPatches": [
+            {
+              "PropName": "C_W",
+              "PropValues": [
+                "9",
+                "0",
+                "0",
+                "0"
+              ],
+              "type": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
       "FileName": "blyt/RdtBase.bflyt",
       "Patches": [
         {
@@ -307,7 +327,7 @@
         {
           "PaneName": "L_BtnNoti",
           "Position": {
-            "X": -250,
+            "X": -275,
             "Y": 0
           },
           "Scale": {
@@ -318,7 +338,7 @@
         {
           "PaneName": "L_BtnShop",
           "Position": {
-            "X": -150,
+            "X": -165,
             "Y": 0
           },
           "Scale": {
@@ -329,7 +349,7 @@
         {
           "PaneName": "L_BtnPvr",
           "Position": {
-            "X": -50,
+            "X": -55,
             "Y": 0
           },
           "Scale": {
@@ -340,7 +360,7 @@
         {
           "PaneName": "L_BtnCtrl",
           "Position": {
-            "X": 50,
+            "X": 55,
             "Y": 0
           },
           "Scale": {
@@ -351,7 +371,7 @@
         {
           "PaneName": "L_BtnSet",
           "Position": {
-            "X": 150,
+            "X": 165,
             "Y": 0
           },
           "Scale": {
@@ -362,7 +382,7 @@
         {
           "PaneName": "L_BtnPow",
           "Position": {
-            "X": 250,
+            "X": 275,
             "Y": 0
           },
           "Scale": {
@@ -373,7 +393,7 @@
         {
           "PaneName": "L_BtnSplay",
           "Position": {
-            "X": 350,
+            "X": 385,
             "Y": 0
           },
           "Scale": {
@@ -384,7 +404,7 @@
         {
           "PaneName": "L_BtnVgc",
           "Position": {
-            "X": 450,
+            "X": 495,
             "Y": 0
           },
           "Scale": {
@@ -395,7 +415,7 @@
         {
           "PaneName": "L_BtnLR",
           "Position": {
-            "X": -350,
+            "X": -385,
             "Y": 0
           },
           "Scale": {
@@ -472,7 +492,7 @@
           "PaneName": "N_Tip",
           "Position": {
             "X": 0,
-            "Y": 62
+            "Y": 74
           }
         }
       ]
@@ -698,7 +718,14 @@
           "PaneName": "N_Tip",
           "Position": {
             "X": 0,
-            "Y": 62
+            "Y": 74
+          }
+        },
+        {
+          "PaneName": "L_New",
+          "Position": {
+            "X": 0,
+            "Y": -43.5
           }
         }
       ]
@@ -770,7 +797,14 @@
           "PaneName": "N_Tip",
           "Position": {
             "X": 0,
-            "Y": 62
+            "Y": 74
+          }
+        },
+        {
+          "PaneName": "L_New",
+          "Position": {
+            "X": 0,
+            "Y": -43.5
           }
         }
       ]
@@ -842,7 +876,7 @@
           "PaneName": "N_Tip",
           "Position": {
             "X": 0,
-            "Y": 62
+            "Y": 74
           }
         }
       ]
@@ -914,7 +948,7 @@
           "PaneName": "N_Tip",
           "Position": {
             "X": 0,
-            "Y": 62
+            "Y": 74
           }
         }
       ]
@@ -1051,7 +1085,7 @@
           "PaneName": "N_Tip",
           "Position": {
             "X": 0,
-            "Y": 62
+            "Y": 74
           }
         }
       ]
@@ -1123,7 +1157,7 @@
           "PaneName": "N_Tip",
           "Position": {
             "X": 0,
-            "Y": 62
+            "Y": 74
           }
         }
       ]
@@ -1195,7 +1229,7 @@
           "PaneName": "N_Tip",
           "Position": {
             "X": 0,
-            "Y": 62
+            "Y": 74
           }
         }
       ]
@@ -1267,7 +1301,7 @@
           "PaneName": "N_Tip",
           "Position": {
             "X": 0,
-            "Y": 62
+            "Y": 74
           }
         }
       ]

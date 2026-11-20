@@ -18,7 +18,7 @@ from build_mytheme import sarc_read          # noqa: E402
 from bflyt_dump import parse_bflyt           # noqa: E402
 
 AUTHOR = "MyTheme"
-VERSION = 4
+VERSION = 5
 
 # ------------------------------------------------------------------ design tokens
 ACCENT = [0.0, 0.48, 1.0, 1.0]          # macOS system blue
@@ -27,10 +27,10 @@ ACCENT_SHADOW = [0.0, 0.36, 0.85, 0.30]
 
 # Home dock (shared with gen_bg.py, which paints the glass plate)
 DOCK_Y = -225                 # 585 px from top
-DOCK_SPACING = 100
+DOCK_SPACING = 110          # v5: wider dock
 DOCK_SCALE = 1.12             # 72 px buttons -> ~81 px
 DOCK_MAIN = ["L_BtnNoti", "L_BtnShop", "L_BtnPvr", "L_BtnCtrl", "L_BtnSet", "L_BtnPow"]
-DOCK_EXTRA = {"L_BtnSplay": 350, "L_BtnVgc": 450, "L_BtnLR": -350}   # normally hidden slots
+DOCK_EXTRA = {"L_BtnSplay": 385, "L_BtnVgc": 495, "L_BtnLR": -385}   # normally hidden slots
 DOCK_BTN_FILES = ["RdtBtnNtf", "RdtBtnShop", "RdtBtnPvr", "RdtBtnCtrl", "RdtBtnSet",
                   "RdtBtnPow", "RdtBtnSplay", "RdtBtnVgc", "RdtBtnLR"]
 SQUIRCLE = 0.25               # corner radius as a fraction of the side (macOS app icon ~22-25 %)
@@ -193,7 +193,13 @@ def design_home(P):
             P.radius(f, pn, side * SQUIRCLE)
         P.radius(f, "N_BtnFocusKey", P.pane(f, "N_BtnFocusKey")["size"][0] * SQUIRCLE + 2)
         if P.has(f, "N_Tip"):
-            P.set(f, "N_Tip", Position=(0, 62))           # labels above the dock, like macOS
+            # label clear above the glass plate (v4 at 62 overlapped the plate's top edge)
+            P.set(f, "N_Tip", Position=(0, 74))
+        if P.has(f, "L_New"):
+            # news dot: macOS-style indicator under the icon instead of on the cut-away corner
+            P.set(f, "L_New", Position=(0, -43.5))
+    # dock labels in the regular dark text colour instead of teal
+    P.usd("RdtBalloonSystemApplet", "T_Main", "C_W", [9, 0, 0, 0], 1)
 
     # game tiles: rounded squares
     t = 256 * 0.205                                       # 52 px
@@ -232,8 +238,15 @@ def design_apps(P):
 
 
 def design_psl(P):
+    # macOS login feel: larger glass cards centred on screen, prompt above, no divider
+    m = "PslSelectSinglePlayer"
+    P.set(m, "N_Cnt", Position=(0, -60), Scale=(1.25, 1.25))
+    P.set(m, "L_Head", Position=(0, 92))
+    P.set("DBtmHeaderNml", "P_Line", Visible=False)
     # rounded card, avatar inset like a photo in a widget, name on the card; blue ring
     f = "BtnCardPlayer"
+    P.set(f, "P_BtnCardBase", ColorTL="FFFFFFDC", ColorTR="FFFFFFDC",
+          ColorBL="FFFFFFDC", ColorBR="FFFFFFDC")         # slightly translucent glass card
     P.set(f, "P_BgName", Visible=False)
     P.set(f, "P_PlayerImage", Size=(120, 120), Position=(0, -10))   # top-anchored: 10 px inset
     for pn in ("P_BtnCardBase", "P_BtnDecideKey", "P_BtnTouch"):

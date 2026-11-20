@@ -132,8 +132,8 @@ def finish(img, seed, vignette=0.18):
 
 
 # ---------------------------------------------------------------- scenes (light mode, for Basic White)
-# Shared with tools/make_layouts.py: dock row centre 585 px from top, 6 buttons 100 px apart, ~81 px each.
-DOCK_CX, DOCK_CY, DOCK_W, DOCK_H = 640, 585, 624, 118
+# Shared with tools/make_layouts.py: dock row centre 585 px from top, 6 buttons 110 px apart, ~81 px each.
+DOCK_CX, DOCK_CY, DOCK_W, DOCK_H = 640, 588, 656, 108   # v5: slimmer, wider; 3 px lower for the indicator dot
 LIGHT = dict(outline=0.10, shadow=0.10, frost=0.06, spec=0.8)
 
 
@@ -142,7 +142,7 @@ def px(x):
 
 
 def dock(img):
-    d = sdf_rrect(px(DOCK_CX), px(DOCK_CY), px(DOCK_W / 2), px(DOCK_H / 2), px(34))
+    d = sdf_rrect(px(DOCK_CX), px(DOCK_CY), px(DOCK_W / 2), px(DOCK_H / 2), px(30))
     return glass(img, d, bevel=0.035, refract=60, blur=10, frost=0.0, tint=(0.80, 0.83, 0.90),
                  shadow=0.14, shadow_dy=10, shadow_r=26, outline=0.16, spec=1.1)
 
@@ -210,12 +210,16 @@ def scene_news():
 
 
 def scene_psl():
-    img = mesh_gradient((0.96, 0.94, 0.99), [
-        (0.30, 0.35, 0.55, (0.88, 0.84, 1.00)),
-        (1.40, 0.65, 0.55, (0.99, 0.86, 0.93)),
-        (0.95, 0.05, 0.45, (0.84, 0.88, 1.00)),
-    ], warp=0.07, seed=7, fold_amp=0.05)
-    return finish(img, 17, vignette=0.04)
+    # login-screen wallpaper: soft aurora with a bright glow where the user cards sit
+    img = mesh_gradient((0.93, 0.93, 0.99), [
+        (0.15, 0.10, 0.60, (0.74, 0.82, 1.00)),
+        (1.65, 0.12, 0.60, (0.92, 0.80, 0.98)),
+        (0.25, 1.00, 0.55, (1.00, 0.86, 0.82)),
+        (1.55, 0.98, 0.55, (0.80, 0.90, 1.00)),
+    ], warp=0.10, seed=7, fold_amp=0.035)
+    glow = np.exp(-(((U - AR / 2) / 0.75) ** 2 + ((V - 0.58) / 0.30) ** 2)).astype(np.float32)
+    img = img * (1 - 0.35 * glow[..., None]) + 0.35 * glow[..., None]
+    return finish(img, 17, vignette=0.06)
 
 
 SCENES = {"home": scene_home, "lock": scene_lock, "apps": scene_apps, "user": scene_user,

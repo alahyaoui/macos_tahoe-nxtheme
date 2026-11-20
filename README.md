@@ -1,4 +1,4 @@
-# MacOS Tahoe (v4)
+# MacOS Tahoe (v5)
 
 Seven Switch themes in a light, frosted-glass macOS Tahoe style, made for **Basic White**
 and built against firmware 23.5.0. Everything is original: backgrounds, layouts and tools.
@@ -6,9 +6,9 @@ and built against firmware 23.5.0. Everything is original: backgrounds, layouts 
 ## What each screen gets
 | File | Target | Design |
 |---|---|---|
-| MacOS_Tahoe_home.nxtheme | `home` | Glass dock with 6 rounded-square buttons and labels above them, rounded game tiles, rounded "All software" button, blue cursor. Also carries `common.json` (dialogs, footer buttons, cursor and footer line across the system menus). |
+| MacOS_Tahoe_home.nxtheme | `home` | Slim, wide glass dock with 6 rounded-square buttons, dark labels above the dock, news indicator dot under its icon, rounded game tiles, rounded "All software" button, blue cursor. Also carries `common.json` (dialogs, footer buttons, cursor and footer line across the system menus). |
 | MacOS_Tahoe_apps.nxtheme | `apps` | Rounded tiles; **Groups** get rounded cards and thumbnails |
-| MacOS_Tahoe_psl.nxtheme  | `psl`  | Rounded user cards with the avatar inset like a photo, blue ring |
+| MacOS_Tahoe_psl.nxtheme  | `psl`  | Login-screen style: larger translucent user cards centred on an aurora wallpaper, prompt above, no divider |
 | MacOS_Tahoe_set.nxtheme  | `set`  | Rounded list rows and highlights, capsule buttons |
 | MacOS_Tahoe_user.nxtheme | `user` | Same as Settings, plus rounded friend/game cards |
 | MacOS_Tahoe_news.nxtheme | `news` | Same treatment for channels and articles |
@@ -20,8 +20,49 @@ list rows 12 px corners, buttons as capsules, cards about 10 % corners.
 ## Known limits (firmware 23.5.0)
 - Elements without user data can't get rounded corners (the installer can edit user data but
   not create it): player avatars, group thumbnails, lock-screen news images stay square.
-- The controller applet (Manettes) and the User page footer line are not part of these
-  layout files, so they keep Nintendo's look.
+- The controller screens ("Manettes", "Changer le style/l'ordre") belong to Nintendo's
+  controller applet, which NXThemes has no target for, and the User page footer line comes
+  from that applet's own shared file. Both keep Nintendo's look.
+
+## Boot logo (bitten pear)
+Not part of the .nxtheme files: these go on the SD card separately. Both are optional.
+
+**hekate splash** (any firmware): copy `bootlogo/bootloader/bootlogo.bmp` to `/bootloader/bootlogo.bmp`.
+It is a 32-bit ARGB BMP (1280x720 art rotated 90 deg counter-clockwise), drawn by `tools/gen_bootlogo.py`.
+
+**Nintendo Switch logo during boot** (optional, Atmosphere): generate the patches yourself with
+[switch-logo-patcher](https://github.com/friedkeenan/switch-logo-patcher) from
+`bootlogo/switch_logo_308x350.png`:
+
+    git clone https://github.com/friedkeenan/switch-logo-patcher
+    cd switch-logo-patcher && python3 -m pip install -r requirements.txt
+    python3 gen_patches.py tahoe_pear_logo "../MacOS Tahoe/bootlogo/switch_logo_308x350.png"
+
+then copy the `tahoe_pear_logo` folder to `/atmosphere/exefs_patches/`. The patcher covers firmware
+up to 23.0.0 (as of Sep 2026); if 23.5.0 uses a different build of the display module the patch is
+simply ignored and the Nintendo logo shows as usual. Delete the folder if anything looks wrong.
+
+## Known limits (firmware 23.5.0)
+- Elements without user data can't get rounded corners (the installer can edit user data but
+  not create it): player avatars, group thumbnails, lock-screen news images stay square.
+- The controller screens ("Manettes", "Changer le style/l'ordre") belong to Nintendo's
+  controller applet, which NXThemes has no target for, and the User page footer line comes
+  from that applet's own shared file. Both keep Nintendo's look.
+
+## Boot logo (bitten pear)
+Not part of the .nxtheme files: these go on the SD card separately. Both are optional.
+
+| File | Copy to | Shown |
+|---|---|---|
+| `bootlogo/bootloader/bootlogo.bmp` | `/bootloader/bootlogo.bmp` | hekate splash (any firmware) |
+| `bootlogo/atmosphere/exefs_patches/tahoe_pear_logo/` | `/atmosphere/exefs_patches/tahoe_pear_logo/` | replaces the Nintendo Switch logo during boot |
+
+The hekate splash is a 32-bit ARGB BMP (1280x720 art rotated 90 deg counter-clockwise), drawn by
+`tools/gen_bootlogo.py`. The logo patches are generated with
+[switch-logo-patcher](https://github.com/friedkeenan/switch-logo-patcher) from
+`bootlogo/switch_logo_308x350.png`; it covers firmware up to 23.0.0. If 23.5.0 uses a different
+build of the display module, the patch is simply ignored and the Nintendo logo shows as usual.
+Remove the patch folder before updating firmware if anything looks wrong.
 
 ## Installing
 Copy only the seven `.nxtheme` files to `/themes` on the SD card and install them with
@@ -31,6 +72,7 @@ NXThemes Installer. Remove any previously installed theme first, then reboot.
     python3 tools/make_layouts.py ../systemData layouts   # needs the "Extract home menu" export
     python3 tools/gen_bg.py backgrounds                   # needs numpy, scipy, Pillow
     python3 tools/build_mytheme.py backgrounds . layouts
+    python3 tools/gen_bootlogo.py bootlogo                # needs numpy, Pillow
 
 `make_layouts.py` reads the console's own layout files only to learn which elements exist and
 their sizes; every patch is checked against them. `tools/bflyt_dump.py` prints any layout's

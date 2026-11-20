@@ -2,11 +2,27 @@
   "PatchName": "MacOS Tahoe Player Select",
   "AuthorName": "MyTheme",
   "TargetName": "Psl.szs",
-  "ID": "MacOSTahoe:psl:4",
+  "ID": "MacOSTahoe:psl:5",
   "Files": [
     {
       "FileName": "blyt/BtnCardPlayer.bflyt",
       "Patches": [
+        {
+          "PaneName": "P_BtnCardBase",
+          "ColorTL": "FFFFFFDC",
+          "ColorTR": "FFFFFFDC",
+          "ColorBL": "FFFFFFDC",
+          "ColorBR": "FFFFFFDC",
+          "UsdPatches": [
+            {
+              "PropName": "S_RoundRadius",
+              "PropValues": [
+                "20.0"
+              ],
+              "type": 2
+            }
+          ]
+        },
         {
           "PaneName": "P_BgName",
           "Visible": false
@@ -21,18 +37,6 @@
             "X": 0,
             "Y": -10
           }
-        },
-        {
-          "PaneName": "P_BtnCardBase",
-          "UsdPatches": [
-            {
-              "PropName": "S_RoundRadius",
-              "PropValues": [
-                "20.0"
-              ],
-              "type": 2
-            }
-          ]
         },
         {
           "PaneName": "P_BtnDecideKey",
@@ -715,6 +719,15 @@
       ]
     },
     {
+      "FileName": "blyt/DBtmHeaderNml.bflyt",
+      "Patches": [
+        {
+          "PaneName": "P_Line",
+          "Visible": false
+        }
+      ]
+    },
+    {
       "FileName": "blyt/LineHeader_Root.bflyt",
       "Patches": [
         {
@@ -1031,6 +1044,29 @@
               "type": 2
             }
           ]
+        }
+      ]
+    },
+    {
+      "FileName": "blyt/PslSelectSinglePlayer.bflyt",
+      "Patches": [
+        {
+          "PaneName": "N_Cnt",
+          "Position": {
+            "X": 0,
+            "Y": -60
+          },
+          "Scale": {
+            "X": 1.25,
+            "Y": 1.25
+          }
+        },
+        {
+          "PaneName": "L_Head",
+          "Position": {
+            "X": 0,
+            "Y": 92
+          }
         }
       ]
     }
