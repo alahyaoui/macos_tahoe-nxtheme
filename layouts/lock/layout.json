@@ -2,7 +2,7 @@
   "PatchName": "MacOS Tahoe Lock",
   "AuthorName": "MyTheme",
   "TargetName": "Entrance.szs",
-  "ID": "MacOSTahoe:lock:6",
+  "ID": "MacOSTahoe:lock:7",
   "Files": [
     {
       "FileName": "blyt/Cursor3.bflyt",
@@ -650,6 +650,39 @@
               "type": 2
             }
           ]
+        }
+      ]
+    },
+    {
+      "FileName": "blyt/Hud.bflyt",
+      "Patches": [
+        {
+          "PaneName": "N_Time",
+          "Position": {
+            "X": 0,
+            "Y": 0
+          }
+        },
+        {
+          "PaneName": "L_BatteryConsole",
+          "Position": {
+            "X": -114,
+            "Y": 0
+          }
+        },
+        {
+          "PaneName": "N_Signal",
+          "Position": {
+            "X": -150,
+            "Y": 0
+          }
+        },
+        {
+          "PaneName": "N_BatteryNum",
+          "Position": {
+            "X": -190,
+            "Y": 0
+          }
         }
       ]
     }

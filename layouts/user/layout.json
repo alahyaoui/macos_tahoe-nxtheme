@@ -2,7 +2,7 @@
   "PatchName": "MacOS Tahoe User Page",
   "AuthorName": "MyTheme",
   "TargetName": "MyPage.szs",
-  "ID": "MacOSTahoe:user:6",
+  "ID": "MacOSTahoe:user:7",
   "Files": [
     {
       "FileName": "blyt/BtnIslandCenterIcon.bflyt",

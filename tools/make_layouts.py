@@ -18,7 +18,7 @@ from build_mytheme import sarc_read          # noqa: E402
 from bflyt_dump import parse_bflyt           # noqa: E402
 
 AUTHOR = "MyTheme"
-VERSION = 6
+VERSION = 7
 
 # ------------------------------------------------------------------ design tokens
 ACCENT = [0.0, 0.48, 1.0, 1.0]          # macOS system blue
@@ -198,6 +198,10 @@ def design_home(P):
     # news dot: L_New's position is animated (RdtBtnNtf_Active/Inactive keep it at 32,32), so
     # offset the dot inside its part instead -> lands under the icon like a macOS dock indicator
     P.set("IconNew", "P_Base_00", Position=(-32, -75.5))
+    # macOS menu bar: users small at top-left, status items small at top-right
+    P.set("RdtBase", "N_MyPage", Position=(-392, 334), Scale=(0.75, 0.75))
+    P.set("RdtBase", "L_Hud", Position=(608, 334), Scale=(0.85, 0.85))
+    menubar_order(P)
     # dock labels in the regular dark text colour instead of teal
     P.usd("RdtBalloonSystemApplet", "T_Main", "C_W", [9, 0, 0, 0], 1)
 
@@ -218,6 +222,16 @@ def design_home(P):
     for pn in ("P_PictBase", "P_BtnDecideKey", "P_BtnTouch", "P_Effect"):
         P.radius(f, pn, 160 * 0.22)
     P.radius(f, "N_BtnFocusKey", 170 * 0.22 + 2)
+
+
+def menubar_order(P):
+    """macOS order, right to left: clock, battery, Wi-Fi (Switch: battery, Wi-Fi, clock)."""
+    if not P.has("Hud"):
+        return
+    P.set("Hud", "N_Time", Position=(0, 0))               # right-anchored: clock at the far right
+    P.set("Hud", "L_BatteryConsole", Position=(-114, 0))  # centre-anchored, 50 px wide
+    P.set("Hud", "N_Signal", Position=(-150, 0))          # right-anchored
+    P.set("Hud", "N_BatteryNum", Position=(-190, 0))      # optional battery %, left of Wi-Fi
 
 
 def design_apps(P):
@@ -244,8 +258,9 @@ def design_psl(P):
     # set only N_Cnt's Y, and move the prompt text inside its header part.
     m = "PslSelectSinglePlayer"
     P.set(m, "N_PlateSize", Scale=(1.25, 1.25))
-    P.set(m, "N_Cnt", Position={"Y": -48})               # x1.25 -> 60 px below centre
-    P.set("DBtmHeaderNml", "T_00", Position=(0, 134))     # prompt 100 px higher, clear of the cards
+    P.set(m, "N_Cnt", Position={"Y": 0})                 # cards centred on screen
+    # prompt becomes the window title, top-left like every other screen's header
+    P.set("DBtmHeaderNml", "T_00", Position=(0, 344))
     P.set("DBtmHeaderNml", "P_Line", Visible=False)
     # rounded card, avatar inset like a photo in a widget, name on the card; blue ring
     f = "BtnCardPlayer"
@@ -287,6 +302,7 @@ def build(target, szs_path):
     pass_lines(P)
     if target == "lock":
         design_lock(P)
+        menubar_order(P)
     szs = os.path.basename(szs_path)
     doc = {"PatchName": f"MacOS Tahoe {NAMES[target]}", "AuthorName": AUTHOR,
            "TargetName": szs, "ID": f"MacOSTahoe:{target}:{VERSION}"}

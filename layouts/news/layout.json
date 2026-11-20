@@ -2,7 +2,7 @@
   "PatchName": "MacOS Tahoe News",
   "AuthorName": "MyTheme",
   "TargetName": "Notification.szs",
-  "ID": "MacOSTahoe:news:6",
+  "ID": "MacOSTahoe:news:7",
   "Files": [
     {
       "FileName": "blyt/BtnIslandNml.bflyt",

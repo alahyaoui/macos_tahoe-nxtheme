@@ -2,7 +2,7 @@
   "PatchName": "MacOS Tahoe Home",
   "AuthorName": "MyTheme",
   "TargetName": "ResidentMenu.szs",
-  "ID": "MacOSTahoe:home:6",
+  "ID": "MacOSTahoe:home:7",
   "HideOnlineBtn": true,
   "Files": [
     {
@@ -286,6 +286,39 @@
       ]
     },
     {
+      "FileName": "blyt/Hud.bflyt",
+      "Patches": [
+        {
+          "PaneName": "N_Time",
+          "Position": {
+            "X": 0,
+            "Y": 0
+          }
+        },
+        {
+          "PaneName": "L_BatteryConsole",
+          "Position": {
+            "X": -114,
+            "Y": 0
+          }
+        },
+        {
+          "PaneName": "N_Signal",
+          "Position": {
+            "X": -150,
+            "Y": 0
+          }
+        },
+        {
+          "PaneName": "N_BatteryNum",
+          "Position": {
+            "X": -190,
+            "Y": 0
+          }
+        }
+      ]
+    },
+    {
       "FileName": "blyt/IconNew.bflyt",
       "Patches": [
         {
@@ -433,6 +466,28 @@
           "Scale": {
             "X": 1.12,
             "Y": 1.12
+          }
+        },
+        {
+          "PaneName": "N_MyPage",
+          "Position": {
+            "X": -392,
+            "Y": 334
+          },
+          "Scale": {
+            "X": 0.75,
+            "Y": 0.75
+          }
+        },
+        {
+          "PaneName": "L_Hud",
+          "Position": {
+            "X": 608,
+            "Y": 334
+          },
+          "Scale": {
+            "X": 0.85,
+            "Y": 0.85
           }
         }
       ]

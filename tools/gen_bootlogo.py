@@ -82,6 +82,7 @@ if __name__ == "__main__":
     os.makedirs(os.path.join(out, "bootloader"), exist_ok=True)
     splash = render(1280, 720, 300, 640, 352)
     splash.save(os.path.join(out, "pear_preview.png"))
+    splash.save(os.path.join(out, "atmosphere_splash_1280x720.png"))   # for insert_splash_screen.py
     write_argb_bmp(os.path.join(out, "bootloader", "bootlogo.bmp"), splash.rotate(90, expand=True))
     render(308, 350, 250, 154, 182).save(os.path.join(out, "switch_logo_308x350.png"))
     print("wrote bootlogo.bmp (720x1280 ARGB), switch_logo_308x350.png, pear_preview.png")

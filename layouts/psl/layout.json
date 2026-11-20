@@ -2,7 +2,7 @@
   "PatchName": "MacOS Tahoe Player Select",
   "AuthorName": "MyTheme",
   "TargetName": "Psl.szs",
-  "ID": "MacOSTahoe:psl:6",
+  "ID": "MacOSTahoe:psl:7",
   "Files": [
     {
       "FileName": "blyt/BtnCardPlayer.bflyt",
@@ -725,7 +725,7 @@
           "PaneName": "T_00",
           "Position": {
             "X": 0,
-            "Y": 134
+            "Y": 344
           }
         },
         {
@@ -1067,7 +1067,7 @@
         {
           "PaneName": "N_Cnt",
           "Position": {
-            "Y": -48
+            "Y": 0
           }
         }
       ]

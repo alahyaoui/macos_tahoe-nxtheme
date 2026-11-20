@@ -2,7 +2,7 @@
   "PatchName": "MacOS Tahoe All Apps",
   "AuthorName": "MyTheme",
   "TargetName": "Flaunch.szs",
-  "ID": "MacOSTahoe:apps:6",
+  "ID": "MacOSTahoe:apps:7",
   "Files": [
     {
       "FileName": "blyt/BtnExpand.bflyt",
