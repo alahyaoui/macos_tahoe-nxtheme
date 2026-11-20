@@ -2,7 +2,7 @@
   "PatchName": "MacOS Tahoe Home",
   "AuthorName": "MyTheme",
   "TargetName": "ResidentMenu.szs",
-  "ID": "MacOSTahoe:home:8",
+  "ID": "MacOSTahoe:home:9",
   "HideOnlineBtn": true,
   "Files": [
     {
@@ -372,100 +372,100 @@
         {
           "PaneName": "L_BtnNoti",
           "Position": {
-            "X": -310,
+            "X": -270,
             "Y": 0
           },
           "Scale": {
-            "X": 1.16,
-            "Y": 1.16
+            "X": 1.3,
+            "Y": 1.3
           }
         },
         {
           "PaneName": "L_BtnShop",
           "Position": {
-            "X": -186,
+            "X": -162,
             "Y": 0
           },
           "Scale": {
-            "X": 1.16,
-            "Y": 1.16
+            "X": 1.3,
+            "Y": 1.3
           }
         },
         {
           "PaneName": "L_BtnPvr",
           "Position": {
-            "X": -62,
+            "X": -54,
             "Y": 0
           },
           "Scale": {
-            "X": 1.16,
-            "Y": 1.16
+            "X": 1.3,
+            "Y": 1.3
           }
         },
         {
           "PaneName": "L_BtnCtrl",
           "Position": {
-            "X": 62,
+            "X": 54,
             "Y": 0
           },
           "Scale": {
-            "X": 1.16,
-            "Y": 1.16
+            "X": 1.3,
+            "Y": 1.3
           }
         },
         {
           "PaneName": "L_BtnSet",
           "Position": {
-            "X": 186,
+            "X": 162,
             "Y": 0
           },
           "Scale": {
-            "X": 1.16,
-            "Y": 1.16
+            "X": 1.3,
+            "Y": 1.3
           }
         },
         {
           "PaneName": "L_BtnPow",
           "Position": {
-            "X": 310,
+            "X": 270,
             "Y": 0
           },
           "Scale": {
-            "X": 1.16,
-            "Y": 1.16
+            "X": 1.3,
+            "Y": 1.3
           }
         },
         {
           "PaneName": "L_BtnSplay",
           "Position": {
-            "X": 434,
+            "X": 378,
             "Y": 0
           },
           "Scale": {
-            "X": 1.16,
-            "Y": 1.16
+            "X": 1.3,
+            "Y": 1.3
           }
         },
         {
           "PaneName": "L_BtnVgc",
           "Position": {
-            "X": 558,
+            "X": 486,
             "Y": 0
           },
           "Scale": {
-            "X": 1.16,
-            "Y": 1.16
+            "X": 1.3,
+            "Y": 1.3
           }
         },
         {
           "PaneName": "L_BtnLR",
           "Position": {
-            "X": -434,
+            "X": -378,
             "Y": 0
           },
           "Scale": {
-            "X": 1.16,
-            "Y": 1.16
+            "X": 1.3,
+            "Y": 1.3
           }
         },
         {

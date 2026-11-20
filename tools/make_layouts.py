@@ -18,7 +18,7 @@ from build_mytheme import sarc_read          # noqa: E402
 from bflyt_dump import parse_bflyt           # noqa: E402
 
 AUTHOR = "MyTheme"
-VERSION = 8
+VERSION = 9
 
 # ------------------------------------------------------------------ design tokens
 ACCENT = [0.0, 0.48, 1.0, 1.0]          # macOS system blue
@@ -27,10 +27,10 @@ ACCENT_SHADOW = [0.0, 0.36, 0.85, 0.30]
 
 # Home dock (shared with gen_bg.py, which paints the glass plate)
 DOCK_Y = -225                 # 585 px from top
-DOCK_SPACING = 124          # v8: longer dock
-DOCK_SCALE = 1.16             # v8: 72 px buttons -> ~84 px
+DOCK_SPACING = 108          # v9: macOS proportions, gap ~15% of icon
+DOCK_SCALE = 1.30             # v9: 72 px buttons -> ~94 px
 DOCK_MAIN = ["L_BtnNoti", "L_BtnShop", "L_BtnPvr", "L_BtnCtrl", "L_BtnSet", "L_BtnPow"]
-DOCK_EXTRA = {"L_BtnSplay": 434, "L_BtnVgc": 558, "L_BtnLR": -434}   # normally hidden slots
+DOCK_EXTRA = {"L_BtnSplay": 378, "L_BtnVgc": 486, "L_BtnLR": -378}   # normally hidden slots
 DOCK_BTN_FILES = ["RdtBtnNtf", "RdtBtnShop", "RdtBtnPvr", "RdtBtnCtrl", "RdtBtnSet",
                   "RdtBtnPow", "RdtBtnSplay", "RdtBtnVgc", "RdtBtnLR"]
 SQUIRCLE = 0.25               # corner radius as a fraction of the side (macOS app icon ~22-25 %)

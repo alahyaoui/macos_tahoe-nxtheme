@@ -1,4 +1,4 @@
-# MacOS Tahoe (v8)
+# MacOS Tahoe (v9)
 
 Seven Switch themes in a light, frosted-glass macOS Tahoe style, made for **Basic White**
 and built against firmware 23.5.0. Everything is original: backgrounds, layouts and tools.
