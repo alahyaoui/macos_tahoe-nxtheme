@@ -18,7 +18,7 @@ from build_mytheme import sarc_read          # noqa: E402
 from bflyt_dump import parse_bflyt           # noqa: E402
 
 AUTHOR = "MyTheme"
-VERSION = 9
+VERSION = 10
 
 # ------------------------------------------------------------------ design tokens
 ACCENT = [0.0, 0.48, 1.0, 1.0]          # macOS system blue
@@ -27,10 +27,13 @@ ACCENT_SHADOW = [0.0, 0.36, 0.85, 0.30]
 
 # Home dock (shared with gen_bg.py, which paints the glass plate)
 DOCK_Y = -225                 # 585 px from top
-DOCK_SPACING = 108          # v9: macOS proportions, gap ~15% of icon
-DOCK_SCALE = 1.30             # v9: 72 px buttons -> ~94 px
+# dock size profile: TAHOE_DOCK=tv (default) or handheld; same macOS proportions, scaled
+DOCK_PROFILE = os.environ.get("TAHOE_DOCK", "tv")
+DOCK_SPACING, DOCK_SCALE = {"tv": (108, 1.30),          # ~94 px icons, ~15% gaps
+                            "handheld": (93, 1.12)}[DOCK_PROFILE]   # ~81 px icons
 DOCK_MAIN = ["L_BtnNoti", "L_BtnShop", "L_BtnPvr", "L_BtnCtrl", "L_BtnSet", "L_BtnPow"]
-DOCK_EXTRA = {"L_BtnSplay": 378, "L_BtnVgc": 486, "L_BtnLR": -378}   # normally hidden slots
+DOCK_EXTRA = {"L_BtnSplay": 3.5 * DOCK_SPACING, "L_BtnVgc": 4.5 * DOCK_SPACING,
+              "L_BtnLR": -3.5 * DOCK_SPACING}   # normally hidden slots
 DOCK_BTN_FILES = ["RdtBtnNtf", "RdtBtnShop", "RdtBtnPvr", "RdtBtnCtrl", "RdtBtnSet",
                   "RdtBtnPow", "RdtBtnSplay", "RdtBtnVgc", "RdtBtnLR"]
 SQUIRCLE = 0.25               # corner radius as a fraction of the side (macOS app icon ~22-25 %)

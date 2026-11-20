@@ -2,7 +2,7 @@
   "PatchName": "MacOS Tahoe Home",
   "AuthorName": "MyTheme",
   "TargetName": "ResidentMenu.szs",
-  "ID": "MacOSTahoe:home:9",
+  "ID": "MacOSTahoe:home:10",
   "HideOnlineBtn": true,
   "Files": [
     {
@@ -438,7 +438,7 @@
         {
           "PaneName": "L_BtnSplay",
           "Position": {
-            "X": 378,
+            "X": 378.0,
             "Y": 0
           },
           "Scale": {
@@ -449,7 +449,7 @@
         {
           "PaneName": "L_BtnVgc",
           "Position": {
-            "X": 486,
+            "X": 486.0,
             "Y": 0
           },
           "Scale": {
@@ -460,7 +460,7 @@
         {
           "PaneName": "L_BtnLR",
           "Position": {
-            "X": -378,
+            "X": -378.0,
             "Y": 0
           },
           "Scale": {

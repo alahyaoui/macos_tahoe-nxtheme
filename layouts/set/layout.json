@@ -2,7 +2,7 @@
   "PatchName": "MacOS Tahoe Settings",
   "AuthorName": "MyTheme",
   "TargetName": "Set.szs",
-  "ID": "MacOSTahoe:set:9",
+  "ID": "MacOSTahoe:set:10",
   "Files": [
     {
       "FileName": "blyt/BtnCenterCheck.bflyt",

@@ -133,7 +133,10 @@ def finish(img, seed, vignette=0.18):
 
 # ---------------------------------------------------------------- scenes (light mode, for Basic White)
 # Shared with tools/make_layouts.py: dock row centre 585 px from top, 6 buttons 110 px apart, ~81 px each.
-DOCK_CX, DOCK_CY, DOCK_W, DOCK_H = 640, 587, 674, 124   # v9: 5x108+94 icons + 2x20 ends   # v5: slimmer, wider; 3 px lower for the indicator dot
+import os
+# plate around the dock row (see make_layouts.py): 5 x pitch + icon + 2 x end padding
+DOCK_CX, DOCK_CY, DOCK_W, DOCK_H = {"tv": (640, 587, 674, 124),
+                                    "handheld": (640, 588, 582, 112)}[os.environ.get("TAHOE_DOCK", "tv")]
 LIGHT = dict(outline=0.10, shadow=0.10, frost=0.06, spec=0.8)
 
 

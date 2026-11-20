@@ -1,4 +1,4 @@
-# MacOS Tahoe (v9)
+# MacOS Tahoe (v10)
 
 Seven Switch themes in a light, frosted-glass macOS Tahoe style, made for **Basic White**
 and built against firmware 23.5.0. Everything is original: backgrounds, layouts and tools.
@@ -16,6 +16,14 @@ and built against firmware 23.5.0. Everything is original: backgrounds, layouts 
 
 Everywhere: macOS-blue selection cursor, header/footer separator lines hidden,
 list rows 12 px corners, buttons as capsules, cards about 10 % corners.
+
+## TV or handheld dock
+The Home theme comes in two sizes; install one (the Switch keeps a single Home theme):
+- `MacOS_Tahoe_home.nxtheme` - TV / docked: ~94 px dock icons
+- `MacOS_Tahoe_home_handheld.nxtheme` - handheld: same proportions, ~81 px icons
+
+Build the handheld one with `TAHOE_DOCK=handheld` for `gen_bg.py` and `make_layouts.py`, and
+`TAHOE_VARIANT=Handheld` for `build_mytheme.py` (sources in `layouts_handheld/`, `backgrounds_handheld/`).
 
 ## Known limits (firmware 23.5.0)
 - Elements without user data can't get rounded corners (the installer can edit user data but
@@ -55,6 +63,14 @@ Redo this after every Atmosphere update (updating replaces package3). To undo, c
 then copy the `tahoe_pear_logo` folder to `/atmosphere/exefs_patches/`. The patcher covers firmware
 up to 23.0.0 (as of Sep 2026); if 23.5.0 uses a different build of the display module the patch is
 simply ignored and the Nintendo logo shows as usual. Delete the folder if anything looks wrong.
+
+## TV or handheld dock
+The Home theme comes in two sizes; install one (the Switch keeps a single Home theme):
+- `MacOS_Tahoe_home.nxtheme` - TV / docked: ~94 px dock icons
+- `MacOS_Tahoe_home_handheld.nxtheme` - handheld: same proportions, ~81 px icons
+
+Build the handheld one with `TAHOE_DOCK=handheld` for `gen_bg.py` and `make_layouts.py`, and
+`TAHOE_VARIANT=Handheld` for `build_mytheme.py` (sources in `layouts_handheld/`, `backgrounds_handheld/`).
 
 ## Known limits (firmware 23.5.0)
 - Elements without user data can't get rounded corners (the installer can edit user data but
