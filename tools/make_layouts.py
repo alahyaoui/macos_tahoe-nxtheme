@@ -18,7 +18,7 @@ from build_mytheme import sarc_read          # noqa: E402
 from bflyt_dump import parse_bflyt           # noqa: E402
 
 AUTHOR = "MyTheme"
-VERSION = 7
+VERSION = 8
 
 # ------------------------------------------------------------------ design tokens
 ACCENT = [0.0, 0.48, 1.0, 1.0]          # macOS system blue
@@ -27,10 +27,10 @@ ACCENT_SHADOW = [0.0, 0.36, 0.85, 0.30]
 
 # Home dock (shared with gen_bg.py, which paints the glass plate)
 DOCK_Y = -225                 # 585 px from top
-DOCK_SPACING = 110          # v5: wider dock
-DOCK_SCALE = 1.12             # 72 px buttons -> ~81 px
+DOCK_SPACING = 124          # v8: longer dock
+DOCK_SCALE = 1.16             # v8: 72 px buttons -> ~84 px
 DOCK_MAIN = ["L_BtnNoti", "L_BtnShop", "L_BtnPvr", "L_BtnCtrl", "L_BtnSet", "L_BtnPow"]
-DOCK_EXTRA = {"L_BtnSplay": 385, "L_BtnVgc": 495, "L_BtnLR": -385}   # normally hidden slots
+DOCK_EXTRA = {"L_BtnSplay": 434, "L_BtnVgc": 558, "L_BtnLR": -434}   # normally hidden slots
 DOCK_BTN_FILES = ["RdtBtnNtf", "RdtBtnShop", "RdtBtnPvr", "RdtBtnCtrl", "RdtBtnSet",
                   "RdtBtnPow", "RdtBtnSplay", "RdtBtnVgc", "RdtBtnLR"]
 SQUIRCLE = 0.25               # corner radius as a fraction of the side (macOS app icon ~22-25 %)
@@ -199,8 +199,10 @@ def design_home(P):
     # offset the dot inside its part instead -> lands under the icon like a macOS dock indicator
     P.set("IconNew", "P_Base_00", Position=(-32, -75.5))
     # macOS menu bar: users small at top-left, status items small at top-right
-    P.set("RdtBase", "N_MyPage", Position=(-392, 334), Scale=(0.75, 0.75))
-    P.set("RdtBase", "L_Hud", Position=(608, 334), Scale=(0.85, 0.85))
+    # v8: N_MyPage keeps Nintendo's X (moving it broke d-pad navigation up to the avatars in v7);
+    # avatars and status items share one menu-bar row
+    P.set("RdtBase", "N_MyPage", Position=(-303, 318), Scale=(0.95, 0.95))
+    P.set("RdtBase", "L_Hud", Position=(608, 318), Scale=(1.05, 1.05))
     menubar_order(P)
     # dock labels in the regular dark text colour instead of teal
     P.usd("RdtBalloonSystemApplet", "T_Main", "C_W", [9, 0, 0, 0], 1)

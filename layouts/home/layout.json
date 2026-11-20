@@ -2,7 +2,7 @@
   "PatchName": "MacOS Tahoe Home",
   "AuthorName": "MyTheme",
   "TargetName": "ResidentMenu.szs",
-  "ID": "MacOSTahoe:home:7",
+  "ID": "MacOSTahoe:home:8",
   "HideOnlineBtn": true,
   "Files": [
     {
@@ -372,122 +372,122 @@
         {
           "PaneName": "L_BtnNoti",
           "Position": {
-            "X": -275,
+            "X": -310,
             "Y": 0
           },
           "Scale": {
-            "X": 1.12,
-            "Y": 1.12
+            "X": 1.16,
+            "Y": 1.16
           }
         },
         {
           "PaneName": "L_BtnShop",
           "Position": {
-            "X": -165,
+            "X": -186,
             "Y": 0
           },
           "Scale": {
-            "X": 1.12,
-            "Y": 1.12
+            "X": 1.16,
+            "Y": 1.16
           }
         },
         {
           "PaneName": "L_BtnPvr",
           "Position": {
-            "X": -55,
+            "X": -62,
             "Y": 0
           },
           "Scale": {
-            "X": 1.12,
-            "Y": 1.12
+            "X": 1.16,
+            "Y": 1.16
           }
         },
         {
           "PaneName": "L_BtnCtrl",
           "Position": {
-            "X": 55,
+            "X": 62,
             "Y": 0
           },
           "Scale": {
-            "X": 1.12,
-            "Y": 1.12
+            "X": 1.16,
+            "Y": 1.16
           }
         },
         {
           "PaneName": "L_BtnSet",
           "Position": {
-            "X": 165,
+            "X": 186,
             "Y": 0
           },
           "Scale": {
-            "X": 1.12,
-            "Y": 1.12
+            "X": 1.16,
+            "Y": 1.16
           }
         },
         {
           "PaneName": "L_BtnPow",
           "Position": {
-            "X": 275,
+            "X": 310,
             "Y": 0
           },
           "Scale": {
-            "X": 1.12,
-            "Y": 1.12
+            "X": 1.16,
+            "Y": 1.16
           }
         },
         {
           "PaneName": "L_BtnSplay",
           "Position": {
-            "X": 385,
+            "X": 434,
             "Y": 0
           },
           "Scale": {
-            "X": 1.12,
-            "Y": 1.12
+            "X": 1.16,
+            "Y": 1.16
           }
         },
         {
           "PaneName": "L_BtnVgc",
           "Position": {
-            "X": 495,
+            "X": 558,
             "Y": 0
           },
           "Scale": {
-            "X": 1.12,
-            "Y": 1.12
+            "X": 1.16,
+            "Y": 1.16
           }
         },
         {
           "PaneName": "L_BtnLR",
           "Position": {
-            "X": -385,
+            "X": -434,
             "Y": 0
           },
           "Scale": {
-            "X": 1.12,
-            "Y": 1.12
+            "X": 1.16,
+            "Y": 1.16
           }
         },
         {
           "PaneName": "N_MyPage",
           "Position": {
-            "X": -392,
-            "Y": 334
+            "X": -303,
+            "Y": 318
           },
           "Scale": {
-            "X": 0.75,
-            "Y": 0.75
+            "X": 0.95,
+            "Y": 0.95
           }
         },
         {
           "PaneName": "L_Hud",
           "Position": {
             "X": 608,
-            "Y": 334
+            "Y": 318
           },
           "Scale": {
-            "X": 0.85,
-            "Y": 0.85
+            "X": 1.05,
+            "Y": 1.05
           }
         }
       ]
