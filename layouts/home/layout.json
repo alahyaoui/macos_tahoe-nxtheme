@@ -2,7 +2,7 @@
   "PatchName": "MacOS Tahoe Home",
   "AuthorName": "MyTheme",
   "TargetName": "ResidentMenu.szs",
-  "ID": "MacOSTahoe:home:11",
+  "ID": "MacOSTahoe:home:12",
   "HideOnlineBtn": true,
   "Files": [
     {
@@ -372,7 +372,7 @@
         {
           "PaneName": "L_BtnNoti",
           "Position": {
-            "X": -232.5,
+            "X": -252,
             "Y": 0
           },
           "Scale": {
@@ -383,7 +383,7 @@
         {
           "PaneName": "L_BtnShop",
           "Position": {
-            "X": -139.5,
+            "X": -152,
             "Y": 0
           },
           "Scale": {
@@ -394,7 +394,7 @@
         {
           "PaneName": "L_BtnPvr",
           "Position": {
-            "X": -46.5,
+            "X": -50,
             "Y": 0
           },
           "Scale": {
@@ -405,7 +405,7 @@
         {
           "PaneName": "L_BtnCtrl",
           "Position": {
-            "X": 46.5,
+            "X": 50,
             "Y": 0
           },
           "Scale": {
@@ -416,7 +416,7 @@
         {
           "PaneName": "L_BtnSet",
           "Position": {
-            "X": 139.5,
+            "X": 152,
             "Y": 0
           },
           "Scale": {
@@ -427,7 +427,7 @@
         {
           "PaneName": "L_BtnPow",
           "Position": {
-            "X": 232.5,
+            "X": 252,
             "Y": 0
           },
           "Scale": {
@@ -438,7 +438,7 @@
         {
           "PaneName": "L_BtnSplay",
           "Position": {
-            "X": 325.5,
+            "X": 353.5,
             "Y": 0
           },
           "Scale": {
@@ -449,7 +449,7 @@
         {
           "PaneName": "L_BtnVgc",
           "Position": {
-            "X": 418.5,
+            "X": 454.5,
             "Y": 0
           },
           "Scale": {
@@ -460,7 +460,7 @@
         {
           "PaneName": "L_BtnLR",
           "Position": {
-            "X": -325.5,
+            "X": -353.5,
             "Y": 0
           },
           "Scale": {

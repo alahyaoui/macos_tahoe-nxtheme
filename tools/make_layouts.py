@@ -18,7 +18,7 @@ from build_mytheme import sarc_read          # noqa: E402
 from bflyt_dump import parse_bflyt           # noqa: E402
 
 AUTHOR = "MyTheme"
-VERSION = 11
+VERSION = 12
 
 # ------------------------------------------------------------------ design tokens
 ACCENT = [0.0, 0.48, 1.0, 1.0]          # macOS system blue
@@ -29,7 +29,7 @@ ACCENT_SHADOW = [0.0, 0.36, 0.85, 0.30]
 DOCK_Y = -225                 # 585 px from top
 # dock: ~81 px icons (physically ~ a default 48 pt macOS dock icon on the 6.2" screen),
 # gap ~15% of the icon; tools/tune_dock.py rewrites these positions for other gaps
-DOCK_SPACING, DOCK_SCALE = 93, 1.12
+DOCK_SPACING, DOCK_SCALE = 101, 1.12   # v12: ~20 px gaps (~25% of the icon)
 DOCK_MAIN = ["L_BtnNoti", "L_BtnShop", "L_BtnPvr", "L_BtnCtrl", "L_BtnSet", "L_BtnPow"]
 DOCK_EXTRA = {"L_BtnSplay": 3.5 * DOCK_SPACING, "L_BtnVgc": 4.5 * DOCK_SPACING,
               "L_BtnLR": -3.5 * DOCK_SPACING}   # normally hidden slots

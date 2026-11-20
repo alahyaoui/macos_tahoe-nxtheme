@@ -3,7 +3,7 @@
 
     python3 tools/tune_dock.py GAP [--ends PX]
 
-GAP     space between two dock icons, in screen pixels (default 12.4)
+GAP     space between two dock icons, in screen pixels (default 20.4)
 --ends  space between the outer icons and the ends of the glass plate (default 18)
 
 Run from the "MacOS Tahoe" folder. Updates layouts/home, redraws the glass plate in

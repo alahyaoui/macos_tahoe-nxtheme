@@ -1,4 +1,4 @@
-# MacOS Tahoe (v11)
+# MacOS Tahoe (v12)
 
 Seven Switch themes in a light, frosted-glass macOS Tahoe style, made for **Basic White**
 and built against firmware 23.5.0. Everything is original: backgrounds, layouts and tools.
@@ -19,11 +19,11 @@ list rows 12 px corners, buttons as capsules, cards about 10 % corners.
 
 ## Dock size
 One Home theme. Dock icons are ~81 px: on the 6.2" screen that is about the physical size of a
-default 48 pt macOS dock icon. Gaps are ~15% of an icon, as on macOS.
+default 48 pt macOS dock icon. Gaps are ~20 px (~25% of an icon), a little airier than macOS.
 
 ## Adjusting the dock gap yourself
     python3 -m pip install numpy scipy pillow       # once
-    python3 tools/tune_dock.py 10                   # 10 px between icons (current: 12.4)
+    python3 tools/tune_dock.py 10                   # 16 px between icons (current: 20.4)
     python3 tools/tune_dock.py 10 --ends 22         # also change the padding at both ends (current: 18)
 
 It moves the dock buttons, redraws the glass plate to the new length and rebuilds

@@ -1,7 +1,7 @@
 {
   "PatchName": "MacOS Tahoe Common",
   "AuthorName": "MyTheme",
-  "ID": "MacOSTahoe:common:11",
+  "ID": "MacOSTahoe:common:12",
   "Files": [
     {
       "FileName": "blyt/BtnCenterPlateHelp.bflyt",
