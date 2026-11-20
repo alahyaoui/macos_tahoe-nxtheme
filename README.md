@@ -1,4 +1,4 @@
-# MacOS Tahoe (v10)
+# MacOS Tahoe (v11)
 
 Seven Switch themes in a light, frosted-glass macOS Tahoe style, made for **Basic White**
 and built against firmware 23.5.0. Everything is original: backgrounds, layouts and tools.
@@ -6,7 +6,7 @@ and built against firmware 23.5.0. Everything is original: backgrounds, layouts 
 ## What each screen gets
 | File | Target | Design |
 |---|---|---|
-| MacOS_Tahoe_home.nxtheme | `home` | macOS-style menu bar (small user avatars top-left; Wi-Fi, battery, clock top-right), Slim, wide glass dock with 6 rounded-square buttons, dark labels above the dock, news / new-friend indicator dot under its icon, rounded game tiles, rounded "All software" button, blue cursor. Also carries `common.json` (dialogs, footer buttons, cursor and footer line across the system menus). |
+| MacOS_Tahoe_home.nxtheme | `home` | macOS-style menu bar (small user avatars top-left; Wi-Fi, battery, clock top-right), glass dock with 6 rounded-square buttons in macOS proportions, dark labels above the dock, news / new-friend indicator dot under its icon, rounded game tiles, rounded "All software" button, blue cursor. Also carries `common.json` (dialogs, footer buttons, cursor and footer line across the system menus). |
 | MacOS_Tahoe_apps.nxtheme | `apps` | Rounded tiles; **Groups** get rounded cards and thumbnails |
 | MacOS_Tahoe_psl.nxtheme  | `psl`  | Login-screen style: larger translucent user cards centred on screen, prompt as the top-left window title, aurora wallpaper |
 | MacOS_Tahoe_set.nxtheme  | `set`  | Rounded list rows and highlights, capsule buttons |
@@ -17,22 +17,17 @@ and built against firmware 23.5.0. Everything is original: backgrounds, layouts 
 Everywhere: macOS-blue selection cursor, header/footer separator lines hidden,
 list rows 12 px corners, buttons as capsules, cards about 10 % corners.
 
-## TV or handheld dock
-The Home theme comes in two sizes; install one (the Switch keeps a single Home theme):
-- `MacOS_Tahoe_home.nxtheme` - TV / docked: ~94 px dock icons
-- `MacOS_Tahoe_home_handheld.nxtheme` - handheld: same proportions, ~81 px icons
-
-Build the handheld one with `TAHOE_DOCK=handheld` for `gen_bg.py` and `make_layouts.py`, and
-`TAHOE_VARIANT=Handheld` for `build_mytheme.py` (sources in `layouts_handheld/`, `backgrounds_handheld/`).
+## Dock size
+One Home theme. Dock icons are ~81 px: on the 6.2" screen that is about the physical size of a
+default 48 pt macOS dock icon. Gaps are ~15% of an icon, as on macOS.
 
 ## Adjusting the dock gap yourself
     python3 -m pip install numpy scipy pillow       # once
-    python3 tools/tune_dock.py 12                   # TV dock, 12 px between icons (current: 14.4)
-    python3 tools/tune_dock.py 10 --handheld        # handheld dock (current: 12.4)
-    python3 tools/tune_dock.py 12 --ends 24         # also change the padding at both ends (current 20 / 18)
+    python3 tools/tune_dock.py 10                   # 10 px between icons (current: 12.4)
+    python3 tools/tune_dock.py 10 --ends 22         # also change the padding at both ends (current: 18)
 
 It moves the dock buttons, redraws the glass plate to the new length and rebuilds
-`MacOS_Tahoe_home.nxtheme` (or `_handheld`). Install the rebuilt Home theme to see it.
+`MacOS_Tahoe_home.nxtheme`. Install the rebuilt Home theme to see it.
 
 ## Known limits (firmware 23.5.0)
 - Elements without user data can't get rounded corners (the installer can edit user data but
@@ -72,45 +67,6 @@ Redo this after every Atmosphere update (updating replaces package3). To undo, c
 then copy the `tahoe_pear_logo` folder to `/atmosphere/exefs_patches/`. The patcher covers firmware
 up to 23.0.0 (as of Sep 2026); if 23.5.0 uses a different build of the display module the patch is
 simply ignored and the Nintendo logo shows as usual. Delete the folder if anything looks wrong.
-
-## TV or handheld dock
-The Home theme comes in two sizes; install one (the Switch keeps a single Home theme):
-- `MacOS_Tahoe_home.nxtheme` - TV / docked: ~94 px dock icons
-- `MacOS_Tahoe_home_handheld.nxtheme` - handheld: same proportions, ~81 px icons
-
-Build the handheld one with `TAHOE_DOCK=handheld` for `gen_bg.py` and `make_layouts.py`, and
-`TAHOE_VARIANT=Handheld` for `build_mytheme.py` (sources in `layouts_handheld/`, `backgrounds_handheld/`).
-
-## Adjusting the dock gap yourself
-    python3 -m pip install numpy scipy pillow       # once
-    python3 tools/tune_dock.py 12                   # TV dock, 12 px between icons (current: 14.4)
-    python3 tools/tune_dock.py 10 --handheld        # handheld dock (current: 12.4)
-    python3 tools/tune_dock.py 12 --ends 24         # also change the padding at both ends (current 20 / 18)
-
-It moves the dock buttons, redraws the glass plate to the new length and rebuilds
-`MacOS_Tahoe_home.nxtheme` (or `_handheld`). Install the rebuilt Home theme to see it.
-
-## Known limits (firmware 23.5.0)
-- Elements without user data can't get rounded corners (the installer can edit user data but
-  not create it): player avatars, group thumbnails, lock-screen news images stay square.
-- The controller screens ("Manettes", "Changer le style/l'ordre") belong to Nintendo's
-  controller applet, which NXThemes has no target for, and the User page footer line comes
-  from that applet's own shared file. Both keep Nintendo's look.
-
-## Boot logo (bitten pear)
-Not part of the .nxtheme files: these go on the SD card separately. Both are optional.
-
-| File | Copy to | Shown |
-|---|---|---|
-| `bootlogo/bootloader/bootlogo.bmp` | `/bootloader/bootlogo.bmp` | hekate splash (any firmware) |
-| `bootlogo/atmosphere/exefs_patches/tahoe_pear_logo/` | `/atmosphere/exefs_patches/tahoe_pear_logo/` | replaces the Nintendo Switch logo during boot |
-
-The hekate splash is a 32-bit ARGB BMP (1280x720 art rotated 90 deg counter-clockwise), drawn by
-`tools/gen_bootlogo.py`. The logo patches are generated with
-[switch-logo-patcher](https://github.com/friedkeenan/switch-logo-patcher) from
-`bootlogo/switch_logo_308x350.png`; it covers firmware up to 23.0.0. If 23.5.0 uses a different
-build of the display module, the patch is simply ignored and the Nintendo logo shows as usual.
-Remove the patch folder before updating firmware if anything looks wrong.
 
 ## Installing
 Copy only the seven `.nxtheme` files to `/themes` on the SD card and install them with

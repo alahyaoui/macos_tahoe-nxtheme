@@ -2,7 +2,7 @@
   "PatchName": "MacOS Tahoe Player Select",
   "AuthorName": "MyTheme",
   "TargetName": "Psl.szs",
-  "ID": "MacOSTahoe:psl:10",
+  "ID": "MacOSTahoe:psl:11",
   "Files": [
     {
       "FileName": "blyt/BtnCardPlayer.bflyt",

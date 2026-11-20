@@ -2,7 +2,7 @@
   "PatchName": "MacOS Tahoe Lock",
   "AuthorName": "MyTheme",
   "TargetName": "Entrance.szs",
-  "ID": "MacOSTahoe:lock:10",
+  "ID": "MacOSTahoe:lock:11",
   "Files": [
     {
       "FileName": "blyt/Cursor3.bflyt",

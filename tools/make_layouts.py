@@ -18,7 +18,7 @@ from build_mytheme import sarc_read          # noqa: E402
 from bflyt_dump import parse_bflyt           # noqa: E402
 
 AUTHOR = "MyTheme"
-VERSION = 10
+VERSION = 11
 
 # ------------------------------------------------------------------ design tokens
 ACCENT = [0.0, 0.48, 1.0, 1.0]          # macOS system blue
@@ -27,10 +27,9 @@ ACCENT_SHADOW = [0.0, 0.36, 0.85, 0.30]
 
 # Home dock (shared with gen_bg.py, which paints the glass plate)
 DOCK_Y = -225                 # 585 px from top
-# dock size profile: TAHOE_DOCK=tv (default) or handheld; same macOS proportions, scaled
-DOCK_PROFILE = os.environ.get("TAHOE_DOCK", "tv")
-DOCK_SPACING, DOCK_SCALE = {"tv": (108, 1.30),          # ~94 px icons, ~15% gaps
-                            "handheld": (93, 1.12)}[DOCK_PROFILE]   # ~81 px icons
+# dock: ~81 px icons (physically ~ a default 48 pt macOS dock icon on the 6.2" screen),
+# gap ~15% of the icon; tools/tune_dock.py rewrites these positions for other gaps
+DOCK_SPACING, DOCK_SCALE = 93, 1.12
 DOCK_MAIN = ["L_BtnNoti", "L_BtnShop", "L_BtnPvr", "L_BtnCtrl", "L_BtnSet", "L_BtnPow"]
 DOCK_EXTRA = {"L_BtnSplay": 3.5 * DOCK_SPACING, "L_BtnVgc": 4.5 * DOCK_SPACING,
               "L_BtnLR": -3.5 * DOCK_SPACING}   # normally hidden slots

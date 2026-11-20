@@ -271,9 +271,8 @@ def build_theme(target: str, jpg: bytes, layout: dict | None) -> bytes:
         raise ValueError(f"{target}: image must be a baseline (non-progressive) JPEG")
     if jpeg_size(jpg) != (1280, 720):
         raise ValueError(f"{target}: image must be 1280x720, got {jpeg_size(jpg)}")
-    variant = os.environ.get("TAHOE_VARIANT", "")
     info = {"Version": INFO_VERSION,
-            "ThemeName": f"{THEME_NAME} - {TARGETS[target]}" + (f" ({variant})" if variant else ""),
+            "ThemeName": f"{THEME_NAME} - {TARGETS[target]}",
             "Author": AUTHOR,
             "Target": target}
     files = {"image.jpg": jpg}
@@ -303,8 +302,7 @@ def main(argv):
         back = sarc_read(data)
         assert back["image.jpg"] == jpg
         assert json.loads(back["info.json"])["Target"] == target
-        variant = os.environ.get("TAHOE_VARIANT", "")
-        name = f"MacOS_Tahoe_{target}" + (f"_{variant.lower()}" if variant else "") + ".nxtheme"
+        name = f"MacOS_Tahoe_{target}.nxtheme"
         with open(os.path.join(out_dir, name), "wb") as f:
             f.write(data)
         print(f"  {name:28s} {len(data):>8,d} bytes  layout: "
