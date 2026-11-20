@@ -18,7 +18,7 @@ from build_mytheme import sarc_read          # noqa: E402
 from bflyt_dump import parse_bflyt           # noqa: E402
 
 AUTHOR = "MyTheme"
-VERSION = 5
+VERSION = 6
 
 # ------------------------------------------------------------------ design tokens
 ACCENT = [0.0, 0.48, 1.0, 1.0]          # macOS system blue
@@ -195,9 +195,9 @@ def design_home(P):
         if P.has(f, "N_Tip"):
             # label clear above the glass plate (v4 at 62 overlapped the plate's top edge)
             P.set(f, "N_Tip", Position=(0, 74))
-        if P.has(f, "L_New"):
-            # news dot: macOS-style indicator under the icon instead of on the cut-away corner
-            P.set(f, "L_New", Position=(0, -43.5))
+    # news dot: L_New's position is animated (RdtBtnNtf_Active/Inactive keep it at 32,32), so
+    # offset the dot inside its part instead -> lands under the icon like a macOS dock indicator
+    P.set("IconNew", "P_Base_00", Position=(-32, -75.5))
     # dock labels in the regular dark text colour instead of teal
     P.usd("RdtBalloonSystemApplet", "T_Main", "C_W", [9, 0, 0, 0], 1)
 
@@ -239,9 +239,13 @@ def design_apps(P):
 
 def design_psl(P):
     # macOS login feel: larger glass cards centred on screen, prompt above, no divider
+    # N_Cnt's X is animated per user count (PslSelectSinglePlayer_Num) to centre the row, and
+    # L_Head is animated by _Skip, so: scale the parent N_PlateSize (keeps the row centred),
+    # set only N_Cnt's Y, and move the prompt text inside its header part.
     m = "PslSelectSinglePlayer"
-    P.set(m, "N_Cnt", Position=(0, -60), Scale=(1.25, 1.25))
-    P.set(m, "L_Head", Position=(0, 92))
+    P.set(m, "N_PlateSize", Scale=(1.25, 1.25))
+    P.set(m, "N_Cnt", Position={"Y": -48})               # x1.25 -> 60 px below centre
+    P.set("DBtmHeaderNml", "T_00", Position=(0, 134))     # prompt 100 px higher, clear of the cards
     P.set("DBtmHeaderNml", "P_Line", Visible=False)
     # rounded card, avatar inset like a photo in a widget, name on the card; blue ring
     f = "BtnCardPlayer"

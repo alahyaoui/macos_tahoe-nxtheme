@@ -2,7 +2,7 @@
   "PatchName": "MacOS Tahoe Home",
   "AuthorName": "MyTheme",
   "TargetName": "ResidentMenu.szs",
-  "ID": "MacOSTahoe:home:5",
+  "ID": "MacOSTahoe:home:6",
   "HideOnlineBtn": true,
   "Files": [
     {
@@ -282,6 +282,18 @@
               "type": 2
             }
           ]
+        }
+      ]
+    },
+    {
+      "FileName": "blyt/IconNew.bflyt",
+      "Patches": [
+        {
+          "PaneName": "P_Base_00",
+          "Position": {
+            "X": -32,
+            "Y": -75.5
+          }
         }
       ]
     },
@@ -720,13 +732,6 @@
             "X": 0,
             "Y": 74
           }
-        },
-        {
-          "PaneName": "L_New",
-          "Position": {
-            "X": 0,
-            "Y": -43.5
-          }
         }
       ]
     },
@@ -798,13 +803,6 @@
           "Position": {
             "X": 0,
             "Y": 74
-          }
-        },
-        {
-          "PaneName": "L_New",
-          "Position": {
-            "X": 0,
-            "Y": -43.5
           }
         }
       ]

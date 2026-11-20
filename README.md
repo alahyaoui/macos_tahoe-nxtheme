@@ -1,4 +1,4 @@
-# MacOS Tahoe (v5)
+# MacOS Tahoe (v6)
 
 Seven Switch themes in a light, frosted-glass macOS Tahoe style, made for **Basic White**
 and built against firmware 23.5.0. Everything is original: backgrounds, layouts and tools.
@@ -6,7 +6,7 @@ and built against firmware 23.5.0. Everything is original: backgrounds, layouts 
 ## What each screen gets
 | File | Target | Design |
 |---|---|---|
-| MacOS_Tahoe_home.nxtheme | `home` | Slim, wide glass dock with 6 rounded-square buttons, dark labels above the dock, news indicator dot under its icon, rounded game tiles, rounded "All software" button, blue cursor. Also carries `common.json` (dialogs, footer buttons, cursor and footer line across the system menus). |
+| MacOS_Tahoe_home.nxtheme | `home` | Slim, wide glass dock with 6 rounded-square buttons, dark labels above the dock, news / new-friend indicator dot under its icon, rounded game tiles, rounded "All software" button, blue cursor. Also carries `common.json` (dialogs, footer buttons, cursor and footer line across the system menus). |
 | MacOS_Tahoe_apps.nxtheme | `apps` | Rounded tiles; **Groups** get rounded cards and thumbnails |
 | MacOS_Tahoe_psl.nxtheme  | `psl`  | Login-screen style: larger translucent user cards centred on an aurora wallpaper, prompt above, no divider |
 | MacOS_Tahoe_set.nxtheme  | `set`  | Rounded list rows and highlights, capsule buttons |
@@ -29,6 +29,10 @@ Not part of the .nxtheme files: these go on the SD card separately. Both are opt
 
 **hekate splash** (any firmware): copy `bootlogo/bootloader/bootlogo.bmp` to `/bootloader/bootlogo.bmp`.
 It is a 32-bit ARGB BMP (1280x720 art rotated 90 deg counter-clockwise), drawn by `tools/gen_bootlogo.py`.
+It shows while hekate starts Atmosphere, so you need to boot through hekate (inject `hekate_ctcaer_*.bin`
+as the payload, not `fusee.bin`). In `/bootloader/hekate_ipl.ini`:
+- under `[config]`, `bootwait=3` (seconds the splash stays up; 0 hides it)
+- the boot entry must not have a `logopath=` line pointing elsewhere (or set `logopath=bootloader/bootlogo.bmp`)
 
 **Nintendo Switch logo during boot** (optional, Atmosphere): generate the patches yourself with
 [switch-logo-patcher](https://github.com/friedkeenan/switch-logo-patcher) from

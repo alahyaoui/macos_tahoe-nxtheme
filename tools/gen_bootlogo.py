@@ -37,7 +37,7 @@ def pear_sdf(x, y):
     top = circle(x, y, -0.015, -0.20, 0.175)
     base = circle(x, y, 0.0, 0.17, 0.315)
     body = smin(top, base, 0.20)
-    bite = circle(x, y, 0.385, 0.03, 0.145)          # bite on the right flank
+    bite = circle(x, y, 0.41, 0.02, 0.19)          # v6: bolder bite          # bite on the right flank
     body = np.maximum(body, -bite)
     stem = seg(x, y, -0.02, -0.355, 0.035, -0.47, 0.022)
     # leaf: lens shape (intersection of two circles), tilted up-right from the stem

@@ -2,7 +2,7 @@
   "PatchName": "MacOS Tahoe Player Select",
   "AuthorName": "MyTheme",
   "TargetName": "Psl.szs",
-  "ID": "MacOSTahoe:psl:5",
+  "ID": "MacOSTahoe:psl:6",
   "Files": [
     {
       "FileName": "blyt/BtnCardPlayer.bflyt",
@@ -722,6 +722,13 @@
       "FileName": "blyt/DBtmHeaderNml.bflyt",
       "Patches": [
         {
+          "PaneName": "T_00",
+          "Position": {
+            "X": 0,
+            "Y": 134
+          }
+        },
+        {
           "PaneName": "P_Line",
           "Visible": false
         }
@@ -1051,21 +1058,16 @@
       "FileName": "blyt/PslSelectSinglePlayer.bflyt",
       "Patches": [
         {
-          "PaneName": "N_Cnt",
-          "Position": {
-            "X": 0,
-            "Y": -60
-          },
+          "PaneName": "N_PlateSize",
           "Scale": {
             "X": 1.25,
             "Y": 1.25
           }
         },
         {
-          "PaneName": "L_Head",
+          "PaneName": "N_Cnt",
           "Position": {
-            "X": 0,
-            "Y": 92
+            "Y": -48
           }
         }
       ]
