@@ -5,3 +5,4 @@ __pycache__/
 systemData/
 *.szs
 *.nca
+dist/

@@ -1,4 +1,4 @@
-# MacOS Tahoe (v12)
+# MacOS Tahoe v1.0.0
 
 Seven Switch themes in a light, frosted-glass macOS Tahoe style, made for **Basic White**
 and built against firmware 23.5.0. Everything is original: backgrounds, layouts and tools.
@@ -71,6 +71,10 @@ simply ignored and the Nintendo logo shows as usual. Delete the folder if anythi
 ## Installing
 Copy only the seven `.nxtheme` files to `/themes` on the SD card and install them with
 NXThemes Installer. Remove any previously installed theme first, then reboot.
+
+## License
+Theme files (`*.nxtheme`, `backgrounds/`, `layouts/`, `bootlogo/`): CC BY-NC-SA 4.0.
+Build tools (`tools/`): MIT. Unofficial fan theme, not affiliated with Apple or Nintendo. See `LICENSE`.
 
 ## Rebuilding
     python3 tools/make_layouts.py ../systemData layouts   # needs the "Extract home menu" export
